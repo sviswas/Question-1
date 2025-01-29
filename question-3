@@ -1,1 +1,16 @@
+const express = require('express');
+const app = express();
 
+app.use(express.json());
+
+app.post('/register', (req, res) => {
+    const { name, email, password } = req.body;
+
+    if (!name || !email || !password) {
+        res.status(400);
+        res.send("Invalid Credentials");
+    }
+  res.status(200);
+        res.send("Success");
+});
+app.listen(3000);
