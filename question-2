@@ -1,1 +1,15 @@
+function fetchData(callback) {
 
+    return new Promise((resolve)=>{
+setTimeout(() => {
+
+        callback(null, "Data received");
+
+    }, 1000);
+});
+}
+async function getdata(){
+  const data=await fetchdata();
+console.log(data);
+}
+getdata()
